@@ -1,0 +1,75 @@
+[
+    {
+        "vin": 1234,
+        "year": 2005,
+        "brand": "Toyota",
+        "color": "Yellow"
+    },
+    {
+        "vin": 1234,
+        "year": 2018,
+        "brand": "Tesla",
+        "color": "Black"
+    },
+    {
+        "vin": 1235,
+        "year": 2011,
+        "brand": "Acura",
+        "color": "White"
+    },
+    {
+        "vin": 1666,
+        "year": 2020,
+        "brand": "Honda",
+        "color": "Grey Blue"
+    },
+    {
+        "vin": 9988,
+        "year": 2001,
+        "brand": "Toyota",
+        "color": "White"
+    },
+    {
+        "vin": 8890,
+        "year": 2001,
+        "brand": "BMW",
+        "color": "Yellow"
+    },
+    {
+        "vin": 2231,
+        "year": 2001,
+        "brand": "Toyota",
+        "color": "Light Blue"
+    },
+    {
+        "vin": 7897,
+        "year": 2001,
+        "brand": "Toyota",
+        "color": "Blue"
+    },
+    {
+        "vin": 8877,
+        "year": 2001,
+        "brand": "Toyota",
+        "color": "Yellow"
+    },
+    {
+        "vin": 6664,
+        "year": 2001,
+        "brand": "Toyota",
+        "color": "Green"
+    },
+    {
+        "vin": 6789,
+        "year": 2001,
+        "brand": "Toyota",
+        "color": "Yellow"
+    },
+    {
+        "vin": 9989,
+        "year": 2021,
+        "brand": "Honda",
+        "color": "Gray"
+    }
+    
+]

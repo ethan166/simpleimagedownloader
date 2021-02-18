@@ -1,0 +1,28 @@
+<p-table [value]="products">
+    <ng-template pTemplate="caption">
+        List of Products
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th *ngFor="let col of cols">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <!-- <p-checkbox name="productGroup"></p-checkbox> -->
+            
+            <td>{{product.code}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.quantity}}</td>
+            <td><img width=100px height=100px  src="{{product.image}}"></td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        There are {{products.length}} products.
+    </ng-template>
+</p-table>
+
+<button (click)="download()">Download</button>
