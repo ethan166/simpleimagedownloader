@@ -11,12 +11,14 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import { TestTableComponent } from './test-table/test-table.component';
+import { ImageDownloaderComponent } from './image-downloader/image-downloader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableBasicDemoComponent,
-    TestTableComponent
+    TestTableComponent,
+    ImageDownloaderComponent
   ],
   imports: [
     BrowserModule,

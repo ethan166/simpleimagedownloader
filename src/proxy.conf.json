@@ -1,0 +1,10 @@
+{
+    "/posts": {
+      "target": "https://ethan-destination.s3.us-east-2.amazonaws.com",
+      "secure": true,
+      "pathRewrite": {
+      "^/posts": ""
+    },
+      "changeOrigin": true
+    }
+}

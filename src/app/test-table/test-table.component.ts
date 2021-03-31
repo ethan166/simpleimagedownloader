@@ -41,12 +41,6 @@ export class TestTableComponent implements OnInit {
       folder.file(car.brand, "Hello" + car.color)
       
     );
-    
-
-   //var FileSaver = new saveAs();
-  // var blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
-   //FileSaver.saveAs(blob, "helloworld.txt");
-
 
    zip.generateAsync({ type: "blob" })
    .then(function (content) {
@@ -54,31 +48,4 @@ export class TestTableComponent implements OnInit {
    });
 
   }
-
-  // onSort() {
-  //   this.updateRowGroupMetaData();
-  // }
-
-
-//   updateRowGroupMetaData() {
-//     this.rowGroupMetadata = {};
-//     if (this.cars) {
-//         for (let i = 0; i < this.cars.length; i++) {
-//             let rowData = this.cars[i];
-//             let brand = rowData.brand;
-//             if (i == 0) {
-//                 this.rowGroupMetadata[brand] = { index: 0, size: 1 };
-//             }
-//             else {
-//                 let previousRowData = this.cars[i - 1];
-//                 let previousRowGroup = previousRowData.brand;
-//                 if (brand === previousRowGroup)
-//                     this.rowGroupMetadata[brand].size++;
-//                 else
-//                     this.rowGroupMetadata[brand] = { index: i, size: 1 };
-//             }
-//         }
-//     }
-// }
-
 }

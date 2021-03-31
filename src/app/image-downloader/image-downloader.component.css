@@ -1,0 +1,17 @@
+.header {
+    color: red;
+    font-style: italic;
+}
+.download {
+    margin:20px;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    font-style: italic;
+    height:3em;
+    background-color: lightgray;
+    padding-top:1em;
+}
+

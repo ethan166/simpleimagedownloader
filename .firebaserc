@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "simpleimagedownloader": {
+      "hosting": {
+        "download-zip-demo": [
+          "simpleimagedownloader"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "simpleimagedownloader"
+  }
+}

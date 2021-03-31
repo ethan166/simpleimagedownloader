@@ -14,45 +14,63 @@ import * as FileSaver from 'file-saver';
 export class TableBasicDemoComponent implements OnInit {
   products: Product[];
   value2: boolean;
+  images : string[];
+
+  selectedProducts: Product[];
   //selectedImages: string[] = [];
   cols: any[];
   constructor(private productService: ProductServiceService) { }
 
   ngOnInit(): void {
     this.productService.getJSON().subscribe(data =>{
-       this.products = data
+       this.products = data;
        //console.log(data);
     });
 
     this.cols = [
       { field: 'code', header: 'Code'},
       { field: 'name', header: 'Name'},
-      { field: 'department', header: 'Department'},
+      { field: 'category', header: 'Category'},
       { field: 'quantity', header: 'Quantity'},
       { field: 'image', header: 'Image'}
     ];
   }
 
+  // download() {
+  //   let date: Date = new Date(); 
+  //   var extension: string = date.toTimeString()
+  //   var zip = new JSZip();
+  //   var folder = zip.folder("Sample_" + extension );
+  
+  //   this.selectedProducts.forEach((car) =>
+  //     folder.file(car.name, "Hello" + car.image)
+      
+  //   );
+
+  //  zip.generateAsync({ type: "blob" })
+  //  .then(function (content) {
+  //    FileSaver.saveAs(content, "Sample.zip");
+  //  });
+
+  // }
+
   download() {
-   // console.log(this.selectedImages);
     let count = 0;
     var zip = new JSZip();
-    
-    var imgFolder = zip.folder("images");
-    // for(let i = 0; i < this.products.length; i++) {
-    //   imgFolder.file(this.products[i].image, )
-    // }
-    this.products.forEach((product) => {
+    var imgFolder = zip.folder("images"); 
+    this.selectedProducts.forEach((product) => {
       const filename = product.image.split('/')[product.image.split('/').length - 1];
-
+      console.log(filename);
       JSZipUtils.getBinaryContent(product.image, (err, data) => {
+
+        console.log(data);
         if (err) {
           throw err;
         };
 
       imgFolder.file(filename, data, {binary: true});
       count++;
-      if(count === this.products.length) {
+      if(count === this.selectedProducts.length) {
         zip.generateAsync({type : "blob"}). then(function (content) {
           FileSaver.saveAs(content, "img.zip");
         });

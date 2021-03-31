@@ -1,0 +1,42 @@
+ <p-table [columns]="cols" [value]="images" [(selection)] = "selectedImages" dataKey="name">
+    <ng-template pTemplate="caption">
+        <h3 class="header">Civil Disobedient Movement Logo Collections @ Myanmar Since Feb 1 Military Coup</h3>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th style="width: 2.25em">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td>
+                <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td>
+            <td *ngFor="let col of columns">
+              
+                 
+                <img width=100px height=100px  [attr.src]="'./assets/imgs/'+ rowData[col.field]"> 
+                <a> ( {{rowData[col.field]}} )</a> 
+                <a [attr.href]="'./assets/imgs/'+ rowData[col.field]" target="_blank">   View Image</a>
+               <!-- <a href="http://localhost:8080/api/file/{{fileUpload}}">{{fileUpload}}</a>  -->
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        <!-- There are {{images.length}} images. -->
+    </ng-template>
+</p-table>
+
+<button class="download" type="button" label="Download" (click)="download()" pButton></button>
+
+
+<footer>
+    <a>Photo Credit to Heroes and Creaters #Myanmar #CDM</a>
+</footer>
+
+  

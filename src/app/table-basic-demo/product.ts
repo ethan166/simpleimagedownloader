@@ -1,7 +1,7 @@
 export class Product {
     code: number;
     name: string;
-    department: string;
+    category: string;
     quantity: number;
     image: string;
 }

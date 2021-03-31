@@ -1,28 +1,42 @@
-<p-table [value]="products">
+<p-table [columns]="cols" [value]="products" [(selection)] = "selectedProducts" dataKey="quantity">
     <ng-template pTemplate="caption">
         List of Products
     </ng-template>
-    <ng-template pTemplate="header">
+    <ng-template pTemplate="header" let-columns>
         <tr>
-            <th *ngFor="let col of cols">
+            <th style="width: 2.25em">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th *ngFor="let col of columns">
                 {{col.header}}
             </th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-product>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr>
-            <!-- <p-checkbox name="productGroup"></p-checkbox> -->
+
+            <td>
+                <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td>
+            <td *ngFor="let col of columns">
+                 <div *ngIf="col.field == 'image';else other_content">
+                    <img width=100px height=100px  src="{{rowData[col.field]}}"> 
+                 </div>
+                 <ng-template #other_content> {{rowData[col.field]}}</ng-template>
             
-            <td>{{product.code}}</td>
+               
+            </td>
+            <!-- <p-checkbox name="productGroup"></p-checkbox> -->
+            <!-- <td>{{product.code}}</td>
             <td>{{product.name}}</td>
             <td>{{product.category}}</td>
-            <td>{{product.quantity}}</td>
-            <td><img width=100px height=100px  src="{{product.image}}"></td>
+            <td>{{product.quantity}}</td> -->
+        <!-- / <td><img width=100px height=100px  src="{{rowData[col.field]}}"></td> -->
         </tr>
     </ng-template>
     <ng-template pTemplate="summary">
-        There are {{products.length}} products.
+        <!-- There are {{products.length}} products. -->
     </ng-template>
 </p-table>
 
-<button (click)="download()">Download</button>
+<button class="download" type="button" label="Download" (click)="download()" pButton></button>
